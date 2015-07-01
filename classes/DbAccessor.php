@@ -148,10 +148,8 @@ class DbAccessor extends PDO {
      */
     function addColumn($table, $column, $type){
         try{
-            $sql = "ALTER TABLE $table ADD :column :type";
+            $sql = "ALTER TABLE $table ADD $column $type";
             $stmt = $this->prepare($sql);
-            $stmt->bindParam(":column", $column);
-            $stmt->bindParam(":type", $type);
             $stmt->execute();
         } catch (PDOException $e) {
             echo "ERROR!: " . $e->getMessage();
