@@ -1,1 +1,1 @@
-INSERT INTO pages (page, pageName) VALUES ('Home', 'home'),('Contact', 'contact'),('About', 'about');
+INSERT INTO pages (page) VALUES ('Home'),('Contact'),('About');
