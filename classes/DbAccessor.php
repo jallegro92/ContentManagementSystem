@@ -136,6 +136,16 @@ class DbAccessor extends PDO {
             echo "ERROR!: " . $e->getMessage();
         }
     }
+    /**
+     * 
+     * @param string $table
+     * The name of the table you would like to add a column to
+     * @param string $column
+     * The name of the column you would like to add
+     * @param string $type
+     * The data type of the column you would like to add
+     * Ex. 'varchar(20)' or 'int'
+     */
     function addColumn($table, $column, $type){
         try{
             $sql = "ALTER TABLE $table ADD :column :type";
