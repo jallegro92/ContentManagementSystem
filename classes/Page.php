@@ -28,7 +28,7 @@ class Page {
      * @param int $pageID
      * The id of the page you would like to change the name of
      */
-    function changeName($newName, $pageID){
+    static function changeName($newName, $pageID){
         $dba = new DbAccessor('db/dbSettings.ini');
         $dba->update("pages", array("page" => $newName), "pageID", $pageID);
         $dba = NULL;
